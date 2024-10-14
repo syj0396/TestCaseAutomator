@@ -1,0 +1,2 @@
+com.example.randoop609.service.UserService
+com.example.randoop609.domain.User
