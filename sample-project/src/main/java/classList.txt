@@ -1,2 +1,4 @@
-com.example.randoop609.service.UserService
+com.example.randoop609.service.UserServiceModified
 com.example.randoop609.domain.User
+com.example.randoop609.repository.UserRepository
+com.example.randoop609.dto.UserDto

@@ -20,7 +20,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/api/user")
-    public ResponseEntity<String> register(@RequestBody @Valid UserDto.SignUpForm signUpForm) {
+    public void register(@RequestBody @Valid UserDto.SignUpForm signUpForm) {
 
         if (!signUpForm.getPassword().equals(signUpForm.getRePassword())) {
             throw new RuntimeException("비밀번호가 일치하지 않습니다.");
@@ -30,13 +30,13 @@ public class UserController {
         User user = signUpForm.toEntity();
 
         // 저장
-        User newUser = userService.saveUser(user);
+        userService.saveUser(user);
 
-        if (newUser != null) {
+        /*if (newUser != null) {
             return ResponseEntity.status(201).body("회원가입이 완료되었습니다.");
         } else {
             return ResponseEntity.status(500).body("회원가입에 실패하였습니다.");
-        }
+        }*/
     }
 
     public User testController() {
